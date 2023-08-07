@@ -1,7 +1,8 @@
 require 'securerandom'
 
 class Item
-  attr_reader :genre, :author, :label, :publish_date, :archived, :id
+  attr_reader :genre, :author, :label, :publish_date, :id
+  attr_accessor :archived
 
   def initialize(publish_date, id = SecureRandom.random_number(1000))
     @publish_date = publish_date
@@ -20,9 +21,26 @@ class Item
   def add_label(label)
     @label = label
   end
+
   def add_source(source)
     @source = source
   end
 
+  def move_to_archive
+    @archived = true if can_be_archived?
+  end
 
+  private
+
+  def can_be_archived?
+    date = publish_date.to_i
+    Time.new.year - date >= 10
+  end
 end
+
+item = Item.new('2000/07/02')
+
+puts item.archived
+item.move_to_archive
+puts
+puts item.archived
