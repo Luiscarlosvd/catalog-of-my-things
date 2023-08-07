@@ -37,10 +37,3 @@ class Item
     Time.new.year - date >= 10
   end
 end
-
-item = Item.new('2000/07/02')
-
-puts item.archived
-item.move_to_archive
-puts
-puts item.archived
