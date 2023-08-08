@@ -14,4 +14,20 @@ class Genre
     @items << item
     item.add_genre(self)
   end
+
+  def self.list_all_genres(genres)
+    if genres.empty?
+      puts 'No Music Albums found'
+    else
+      filtered_genres = []
+      genres.each do |genre|
+        filtered_genres << genre unless filtered_genres.any? { |g| g.name == genre.name }
+      end
+
+      filtered_genres.each_with_index do |genre, index|
+        puts "#{index}) Genre: #{genre.name}"
+      end
+      puts
+    end
+  end
 end

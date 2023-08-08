@@ -1,6 +1,7 @@
 require_relative 'message_outputs'
 require './models/music_album'
 require_relative 'models/game'
+require './models/genre'
 
 class App
   include MessageOutputs
