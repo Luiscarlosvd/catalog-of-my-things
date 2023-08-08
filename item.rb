@@ -1,8 +1,9 @@
 require 'securerandom'
+require_relative 'label'
 
 class Item
   attr_reader :genre, :author, :label, :publish_date, :id
-  attr_accessor :archived
+  attr_accessor :archived, :label
 
   def initialize(publish_date, id = SecureRandom.random_number(1000))
     @publish_date = publish_date
