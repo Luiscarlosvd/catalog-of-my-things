@@ -31,15 +31,25 @@ class MusicAlbum < Item
     print 'Publish Date [YYYY/MM/DD]: '
     publish_date = gets.chomp
 
-    author = Author.new(first_name, last_name)
-    new_genre = Genre.new(name_genre)
+    new_author = authors.find { |find_author| find_author.first_name == first_name && find_author.last_name == last_name }
+
+    new_genre = genre.find { |find_genre| find_genre.name == name_genre }
+
     new_music_album = MusicAlbum.new(publish_date)
 
-    author.add_item(new_music_album)
-    new_genre.add_item(new_music_album)
+    if new_genre.nil?
+      new_genre = Genre.new(name_genre)
+      genre << new_genre
+    end
 
-    authors << author
-    genre << new_genre
+    if new_author.nil?
+      new_author = Author.new(first_name, last_name)
+      authors << author
+    end
+
+    new_genre.add_item(new_music_album)
+    new_author.add_item(new_music_album)
+
     music_albums << new_music_album
     puts 'Your music album has been created successfully'
   end

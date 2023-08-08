@@ -1,5 +1,6 @@
 require_relative 'message_outputs'
 require './models/music_album'
+require './models/genre'
 
 class App
   include MessageOutputs
@@ -24,6 +25,8 @@ class App
     # Complete the choices
     when 2
       MusicAlbum.list_all_music_albums(music_albums)
+    when 4
+      Genre.list_all_genres(genre)
     when 8
       MusicAlbum.add_music_album(music_albums, genre, authors)
     when 10
