@@ -1,5 +1,5 @@
 require 'securerandom'
-require_relative 'item'
+require_relative '../item'
 
 class Genre
   attr_reader :name, :id

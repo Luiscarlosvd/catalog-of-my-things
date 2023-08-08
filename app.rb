@@ -1,7 +1,13 @@
 require_relative 'message_outputs'
+require './models/music_album.rb'
 
 class App
   include MessageOutputs
+  attr_accessor :music_albums
+
+  def initialize
+    @music_albums = []
+  end
 
   def run
     greetings
@@ -14,6 +20,8 @@ class App
   def option_selected(number)
     case number
     # Complete the choices
+    when 2
+      MusicAlbum.list_all_music_albums
     when 10
       goodbye
       exit
