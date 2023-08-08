@@ -11,6 +11,7 @@ class MusicAlbum < Item
   end
 
   def self.list_all_music_albums(music_albums)
+    print music_albums
     if music_albums.empty?
       puts 'No Music Albums found'
     else
@@ -44,7 +45,7 @@ class MusicAlbum < Item
 
     if new_author.nil?
       new_author = Author.new(first_name, last_name)
-      authors << author
+      authors << new_author
     end
 
     new_genre.add_item(new_music_album)

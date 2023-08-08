@@ -1,9 +1,11 @@
 require_relative 'message_outputs'
+require_relative './preserveData/write_data.rb'
+require_relative './preserveData/load_data.rb'
 require './models/music_album'
 require './models/genre'
 
 class App
-  include MessageOutputs
+  include MessageOutputs, WriteData
   attr_accessor :music_albums, :genre, :authors
 
   def initialize
@@ -28,6 +30,7 @@ class App
       Genre.list_all_genres(genre)
     when 8
       MusicAlbum.add_music_album(music_albums, genre, authors)
+      write_genres
     when 10
       goodbye
       exit
