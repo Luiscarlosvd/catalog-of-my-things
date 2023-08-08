@@ -7,11 +7,12 @@ require './models/genre'
 class App
   include WriteData
   include MessageOutputs
+  include LoadData
   attr_accessor :music_albums, :genre, :authors
 
   def initialize
     @music_albums = []
-    @genre = []
+    @genre = load_genres
     @authors = []
   end
 
