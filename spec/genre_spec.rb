@@ -1,4 +1,4 @@
-require_relative '../genre'
+require_relative '../models/genre'
 
 describe Genre do
   context 'when using the add_item method' do
