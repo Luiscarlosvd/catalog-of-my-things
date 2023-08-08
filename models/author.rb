@@ -26,7 +26,7 @@ class Author
       end
 
       filtered_authors.each_with_index do |author, index|
-        puts "#{index}) Author: #{author.name}"
+        puts "[#{index + 1}] (ID: #{author.id}) Author: #{author.first_name} #{author.last_name}"
       end
       puts
     end

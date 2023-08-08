@@ -29,7 +29,7 @@ class App
     when 3
       Game.list_all_games(games)
     when 6
-      Author.list_authors(authors)
+      Author.list_all_authors(authors)
     when 8
       MusicAlbum.add_music_album(music_albums, genre, authors)
     when 9
