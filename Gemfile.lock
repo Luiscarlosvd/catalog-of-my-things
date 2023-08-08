@@ -51,7 +51,7 @@ DEPENDENCIES
   colorize
   json (~> 2.6, >= 2.6.2)
   rspec
-  rubocop (>= 1.0, < 2.0)
+  rubocop
 
 BUNDLED WITH
    2.4.17
