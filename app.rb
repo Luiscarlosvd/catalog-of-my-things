@@ -5,7 +5,7 @@ require './models/genre'
 
 class App
   include MessageOutputs
-  attr_accessor :music_albums, :genre, :authors
+  attr_accessor :music_albums, :genre, :authors, :games
 
   def initialize
     @music_albums = []
@@ -29,13 +29,13 @@ class App
     when 2
       MusicAlbum.list_all_music_albums(music_albums)
     when 3
-      Game.list_games(games)
+      Game.list_all_games(games)
     when 6
       Author.list_authors(authors)
     when 8
       MusicAlbum.add_music_album(music_albums, genre, authors)
     when 9
-      @games << Game.add_game
+      @games << Game.add_games(games, genre, authors)
     when 10
       goodbye
       exit
