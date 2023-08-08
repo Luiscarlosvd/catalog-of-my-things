@@ -3,7 +3,7 @@ require_relative 'author'
 require_relative 'genre'
 
 class MusicAlbum < Item
-  attr_accessor :on_spotify
+  attr_accessor :on_spotify, :id
 
   def initialize(publish_date, id = SecureRandom.random_number(1000))
     super(publish_date, id)
@@ -11,7 +11,6 @@ class MusicAlbum < Item
   end
 
   def self.list_all_music_albums(music_albums)
-    print music_albums
     if music_albums.empty?
       puts 'No Music Albums found'
     else
