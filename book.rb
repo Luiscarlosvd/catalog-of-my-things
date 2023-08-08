@@ -1,20 +1,17 @@
-class Book
-  attr_reader :publisher_date
-  attr_accessor :publisher, :age, :cover_state
+require './item'
 
-  def initialize (publisher, age, cover_state, publisher_date: true)
-    super()
+class Book < Item
+  attr_accessor :publisher, :cover_state
+
+  def initialize(publisher, cover_state, *args)
+    super(*args)
     @publisher = publisher
-    @age = age
     @cover_state = cover_state
-    @publisher_date = publisher_date
   end
 
-  def can_be_achieved?
-    publisher_date? || @cover_state == "bad"
-  end
+  private
 
-  def publisher_date?
-    @age >= 10
+  def can_be_archived?
+    super || @cover_state == 'bad'
   end
 end
