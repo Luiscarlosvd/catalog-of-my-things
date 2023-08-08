@@ -1,7 +1,15 @@
 require_relative 'message_outputs'
+require './models/music_album'
 
 class App
   include MessageOutputs
+  attr_accessor :music_albums, :genre, :authors
+
+  def initialize
+    @music_albums = []
+    @genre = []
+    @authors = []
+  end
 
   def run
     greetings
@@ -13,8 +21,14 @@ class App
 
   def option_selected(number)
     case number
-    # Complete the choice
-    when 16
+   
+
+    when 2
+      MusicAlbum.list_all_music_albums(music_albums)
+    when 8
+      MusicAlbum.add_music_album(music_albums, genre, authors)
+    when 10
+     when 16
       goodbye
       exit
     else
