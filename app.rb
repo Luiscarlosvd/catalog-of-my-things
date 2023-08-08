@@ -14,7 +14,7 @@ class App
   def option_selected(number)
     case number
     # Complete the choices
-    when 16
+    when 10
       goodbye
       exit
     else
