@@ -32,6 +32,8 @@ class App
       MusicAlbum.list_all_music_albums(music_albums)
     when 3
       Game.list_all_games(games)
+    when 4
+      Genre.list_all_genres(genre)
     when 6
       Author.list_all_authors(authors)
     when 8

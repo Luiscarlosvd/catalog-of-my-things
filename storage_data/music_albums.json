@@ -14,5 +14,13 @@
     "first_name": "Sergio",
     "last_name": "Peralta",
     "genre": "Jazz"
+  },
+  {
+    "publish_date": "2019/07/07",
+    "id": 686,
+    "on_spotify": false,
+    "first_name": "Adeyemi",
+    "last_name": "Olusola",
+    "genre": "Rock"
   }
 ]
