@@ -15,4 +15,20 @@ class Author
     @items << item
     item.add_author(self)
   end
+
+  def self.list_all_authors(authors)
+    if authors.empty?
+      puts 'No Authors found'
+    else
+      filtered_authors = []
+      authors.each do |author|
+        filtered_authors << author unless filtered_authors.any? { |a| a.name == author.name }
+      end
+
+      filtered_authors.each_with_index do |author, index|
+        puts "[#{index + 1}] (ID: #{author.id}) Author: #{author.first_name} #{author.last_name}"
+      end
+      puts
+    end
+  end
 end
