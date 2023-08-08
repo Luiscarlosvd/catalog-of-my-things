@@ -63,14 +63,11 @@ class Game < Item
     new_genre = Genre.new(genre_name)
     new_genre.add_item(new_game)
 
-
     # new_game
 
     new_author = authors.find { |find_author| find_author.first_name == author_first_name && find_author.last_name == author_last_name }
 
     new_genre = genre.find { |find_genre| find_genre.name == genre_name }
-
-
 
     if new_genre.nil?
       new_genre = Genre.new(genre_name)

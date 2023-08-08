@@ -24,8 +24,6 @@ class App
 
   def option_selected(number)
     case number
-
-
     when 2
       MusicAlbum.list_all_music_albums(music_albums)
     when 3
