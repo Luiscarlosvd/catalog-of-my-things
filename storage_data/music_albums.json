@@ -1,0 +1,18 @@
+[
+  {
+    "publish_date": "2023/03/03",
+    "id": 552,
+    "on_spotify": false,
+    "first_name": "Luis",
+    "last_name": "Valera",
+    "genre": "Rock"
+  },
+  {
+    "publish_date": "2022/01/04",
+    "id": 865,
+    "on_spotify": false,
+    "first_name": "Sergio",
+    "last_name": "Peralta",
+    "genre": "Jazz"
+  }
+]

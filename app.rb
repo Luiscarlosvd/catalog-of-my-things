@@ -11,8 +11,8 @@ class App
   attr_accessor :music_albums, :genre, :authors
 
   def initialize
-    @music_albums = []
     @genre = load_genres
+    @music_albums = load_music_albums
     @authors = []
   end
 
