@@ -22,7 +22,7 @@ class Author
     else
       filtered_authors = []
       authors.each do |author|
-        filtered_authors << author unless filtered_authors.any? { |a| a.name == author.name }
+        filtered_authors << author unless filtered_authors.any? { |a| a.first_name == author.first_name && a.last_name == author.last_name }
       end
 
       filtered_authors.each_with_index do |author, index|

@@ -41,4 +41,18 @@ module LoadData
     end
     music_album_arr
   end
+
+  def load_authors
+    authors_arr = []
+    if File.exist?('./storage_data/author.json')
+      authors_data = File.read('./storage_data/author.json')
+      if authors_data != ''
+        JSON.parse(authors_data).map do |author|
+          new_author = Author.new(author['first_name'], author['last_name'], author['id'])
+          authors_arr << new_author
+        end
+      end
+    end
+    authors_arr
+  end
 end
