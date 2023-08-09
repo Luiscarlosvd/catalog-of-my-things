@@ -60,7 +60,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 Catalog of my things <a name="about-project"></a>
 
-> This project is a catalog of things, where you can add, edit and delete things,also you can add categories and labels to your things.
+> This project is a catalog of things where users can choose an option like creating Books, Music Albums, and Games with information like authors and genres. This app preserves the data for users in files and users can filter the information by listing the information about all authors, games, music albums, and more. [You can see the description of the project here](https://drive.google.com/file/d/1b0fmKIGfi_r9Ygz4OcG_1pTHSWK2Xcwu/view)
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -101,9 +101,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Add, edit and delete things**
-- **Add categories and labels to your things**
-- **List of things, categories and labels**
+- **Add Books, Music Albums and Games**
+- **Preserve data in files**
+- **List all things inside the app like genres, authors and labels**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -236,7 +236,7 @@ If you like this project,please give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for giving me the opportunity to learn and grow as a developer.
+We would like to thank Microverse for giving us the opportunity to learn and grow as developers.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -246,7 +246,7 @@ I would like to thank Microverse for giving me the opportunity to learn and grow
 
 - **Do I need to install any program before running this project?**
 
-  - [ ] **Yes, you need to install Rubt** 
+  - [ ] **Yes, you need to install Ruby** 
   
   <br>
 
