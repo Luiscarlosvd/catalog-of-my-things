@@ -1,5 +1,5 @@
 require 'securerandom'
-require_relative '../label'
+require_relative '../models/label'
 
 describe Label do
   context 'when using the add_item method' do

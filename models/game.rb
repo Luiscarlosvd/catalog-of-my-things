@@ -26,9 +26,9 @@ class Game < Item
     end
   end
 
-  def self.add_games(games, genre, authors)
-    # print 'Enter name of the game: '
-    # label_title = gets.chomp
+  def self.add_games(games, genre, authors, labels)
+    print 'Enter name of the game: '
+    label_title = gets.chomp
     print 'Games\'s creator first name: '
     author_first_name = gets.chomp
     print 'Game\'s creator last name: '
@@ -52,23 +52,14 @@ class Game < Item
     print 'When was the game last played?'
     print "\nAnswer: "
     last_played = gets.chomp.to_i
+    print 'Enter the game\'s color: '
+    label_color = gets.chomp
 
     new_game = Game.new(multiplayer_answer, last_played, game_date)
 
-    new_author = Author.new(author_first_name, author_last_name)
-    new_author.add_item(new_game)
-
-    # new_label = Label.new(label_title, 'unknown')
-    # new_label.add_item(new_game)
-
-    new_genre = Genre.new(genre_name)
-    new_genre.add_item(new_game)
-
-    # new_game
-
     new_author = authors.find { |find_author| find_author.first_name == author_first_name && find_author.last_name == author_last_name }
-
     new_genre = genre.find { |find_genre| find_genre.name == genre_name }
+    new_label = labels.find { |find_label| find_label.title == label_title && find_label.color == label_color }
 
     if new_genre.nil?
       new_genre = Genre.new(genre_name)
@@ -80,8 +71,14 @@ class Game < Item
       authors << new_author
     end
 
+    if new_label.nil?
+      new_label = Label.new(label_title, label_color)
+      labels << new_label
+    end
+
     new_genre.add_item(new_game)
     new_author.add_item(new_game)
+    new_label.add_item(new_game)
 
     games << new_game
     puts 'Your game has been created successfully'
