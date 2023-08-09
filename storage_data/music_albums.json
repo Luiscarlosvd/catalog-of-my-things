@@ -1,26 +1,12 @@
 [
   {
-    "publish_date": "2020/20/20",
-    "id": 408,
+    "publish_date": "2009/04/04",
+    "id": 721,
+    "title": "The machine",
+    "label_color": "black",
     "on_spotify": false,
-    "first_name": "Asd",
-    "last_name": "Asd",
-    "genre": "Zxc"
-  },
-  {
-    "publish_date": "2023/03/03",
-    "id": 218,
-    "on_spotify": false,
-    "first_name": "Luis",
-    "last_name": "Valera",
-    "genre": "Rock"
-  },
-  {
-    "publish_date": "2022/02/02",
-    "id": 558,
-    "on_spotify": false,
-    "first_name": "Redman",
-    "last_name": "Dsd",
+    "first_name": "Sergio",
+    "last_name": "Luis",
     "genre": "Rock"
   }
 ]

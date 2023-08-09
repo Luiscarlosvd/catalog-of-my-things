@@ -15,12 +15,12 @@ class App
   attr_accessor :music_albums, :genre, :authors, :games, :labels, :books
 
   def initialize
+    @labels = load_labels
     @genre = load_genres
     @authors = load_authors
     @music_albums = load_music_albums
     @games = load_games
-    @labels = []
-    @books = []
+    @books = load_books
   end
 
   def run

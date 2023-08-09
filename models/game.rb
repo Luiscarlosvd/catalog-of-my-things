@@ -19,7 +19,7 @@ class Game < Item
       puts 'List of all games: '
       games.each do |game|
         if game.instance_of? Game
-          puts "#{index}) (ID:#{game.id}) The game: game.label , Author: #{game.author.first_name} #{game.author.last_name}, Genre: #{game.genre.name}, Publish Date: #{game.publish_date}"
+          puts "#{index}) (ID:#{game.id}) The game: #{game.label.title}, Author: #{game.author.first_name} #{game.author.last_name}, Genre: #{game.genre.name}, Publish Date: #{game.publish_date}"
           index += 1
         end
       end
@@ -28,13 +28,13 @@ class Game < Item
 
   def self.add_games(games, genre, authors, labels)
     print 'Enter name of the game: '
-    label_title = gets.chomp
+    label_title = gets.chomp.capitalize
     print 'Games\'s creator first name: '
-    author_first_name = gets.chomp
+    author_first_name = gets.chomp.capitalize
     print 'Game\'s creator last name: '
-    author_last_name = gets.chomp
+    author_last_name = gets.chomp.capitalize
     print 'Enter the game\'s genre: '
-    genre_name = gets.chomp
+    genre_name = gets.chomp.capitalize
 
     # item inputs
     print "\nWhat's the publish date? [year] "

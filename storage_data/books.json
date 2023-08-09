@@ -1,11 +1,11 @@
 [
   {
-    "publish_date": 2023,
-    "id": 880,
-    "title": "Moby Dick",
+    "publish_date": 1993,
+    "id": 71,
+    "title": "Romeo and Julieta",
     "label_color": "red",
-    "publisher": "",
-    "cover_state": "good",
+    "publisher": "My house",
+    "cover_state": "bad",
     "first_name": "Luis",
     "last_name": "Valera",
     "genre": "Adventure"

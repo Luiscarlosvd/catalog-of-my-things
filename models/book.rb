@@ -4,7 +4,7 @@ require_relative 'genre'
 require_relative 'label'
 
 class Book < Item
-  attr_accessor :publisher, :cover_state
+  attr_accessor :publisher, :cover_state, :id
 
   def initialize(publisher, cover_state, *args)
     super(*args)
@@ -29,19 +29,19 @@ class Book < Item
 
   def self.add_books(books, genre, authors, labels)
     print 'Enter name of the book: '
-    label_title = gets.chomp
+    label_title = gets.chomp.capitalize
     print 'Book\'s creator first name: '
-    author_first_name = gets.chomp
+    author_first_name = gets.chomp.capitalize
     print 'Book\'s creator last name: '
-    author_last_name = gets.chomp
+    author_last_name = gets.chomp.capitalize
     print 'Enter the book\'s genre: '
-    genre_name = gets.chomp
+    genre_name = gets.chomp.capitalize
     print 'Enter the book\'s publisher: '
-    publisher_name = gets.chomp
+    publisher_name = gets.chomp.capitalize
     print 'Enter the book\'s cover state: '
-    cover_state = gets.chomp
+    cover_state = gets.chomp.capitalize
     print 'Enter the book\'s color: '
-    label_color = gets.chomp
+    label_color = gets.chomp.capitalize
 
     # item inputs
     print "\nWhat's the publish date? [year] "

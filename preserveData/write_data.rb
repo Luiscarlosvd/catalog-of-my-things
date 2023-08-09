@@ -18,6 +18,8 @@ module WriteData
       new_music_album = {
         publish_date: music_album.publish_date,
         id: music_album.id,
+        title: music_album.label.title,
+        label_color: music_album.label.color,
         on_spotify: music_album.on_spotify,
         first_name: music_album.author.first_name,
         last_name: music_album.author.last_name,
@@ -45,6 +47,8 @@ module WriteData
       new_game = {
         publish_date: game.publish_date,
         id: game.id,
+        title: game.label.title,
+        label_color: game.label.color,
         multiplayer: game.multiplayer,
         last_played_at: game.last_played_at,
         first_name: game.author.first_name,

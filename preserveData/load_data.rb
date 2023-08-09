@@ -2,6 +2,8 @@ require 'json'
 require './models/genre'
 require './models/music_album'
 require './models/author'
+require './models/book'
+require './models/label'
 
 module LoadData
   def load_genres
@@ -30,9 +32,11 @@ module LoadData
           new_music_album.on_spotify = music_album['on_spotify']
           new_author = authors.find { |find_author| find_author.first_name == music_album['first_name'] && find_author.last_name == music_album['last_name'] }
           new_genre = genre.find { |find_genre| find_genre.name == music_album['genre'] }
+          new_label = labels.find { |find_label| find_label.title == music_album['title'] && find_label.color == music_album['label_color'] }
 
           new_genre.add_item(new_music_album)
           new_author.add_item(new_music_album)
+          new_label.add_item(new_music_album)
 
           music_album_arr << new_music_album
         end
@@ -55,21 +59,60 @@ module LoadData
     authors_arr
   end
 
+  def load_labels
+    labels_arr = []
+    if File.exist?('./storage_data/labels.json')
+      labels_data = File.read('./storage_data/labels.json')
+      if labels_data != ''
+        JSON.parse(labels_data).map do |label|
+          new_label = Label.new(label['label_title'], label['label_color'], label['id'])
+          labels_arr << new_label
+        end
+      end
+    end
+    labels_arr
+  end
+
   def load_games
     games_arr = []
     if File.exist?('./storage_data/games.json')
       games_data = File.read('./storage_data/games.json')
       if games_data != ''
         JSON.parse(games_data).map do |game|
-          new_game = Game.new(game['multiplayer'], game['last_played_at'], game['id'], game['publish_date'])
+          new_game = Game.new(game['multiplayer'], game['last_played_at'], game['publish_date'], game['id'])
           new_author = authors.find { |find_author| find_author.first_name == game['first_name'] && find_author.last_name == game['last_name'] }
           new_genre = genre.find { |find_genre| find_genre.name == game['genre'] }
+          new_label = labels.find { |find_label| find_label.title == game['title'] && find_label.color == game['label_color'] }
           new_genre.add_item(new_game)
           new_author.add_item(new_game)
+          new_label.add_item(new_game)
           games_arr << new_game
         end
       end
     end
     games_arr
+  end
+
+  def load_books
+    books_arr = []
+    if File.exist?('./storage_data/books.json')
+      books_data = File.read('./storage_data/books.json')
+      if books_data != ''
+        JSON.parse(books_data).map do |book|
+          new_book = Book.new(book['publisher'], book['cover_state'], book['publish_date'])
+          new_book.id = book['id']
+          new_author = authors.find { |find_author| find_author.first_name == book['first_name'] && find_author.last_name == book['last_name'] }
+          new_label = labels.find { |find_label| find_label.title == book['title'] && find_label.color == book['label_color'] }
+          new_genre = genre.find { |find_genre| find_genre.name == book['genre'] }
+
+          new_genre.add_item(new_book)
+          new_author.add_item(new_book)
+          new_label.add_item(new_book)
+
+          books_arr << new_book
+        end
+      end
+    end
+    books_arr
   end
 end
