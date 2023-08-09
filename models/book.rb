@@ -1,4 +1,7 @@
-require './item'
+require_relative '../item'
+require_relative 'author'
+require_relative 'genre'
+require_relative 'label'
 
 class Book < Item
   attr_accessor :publisher, :cover_state
@@ -24,8 +27,44 @@ class Book < Item
     end
   end
 
-  def move_to_archive
-    @archived = true if can_be_archived?
+  def self.add_books(books, genre, authors, labels)
+    print 'Enter name of the book: '
+    label_title = gets.chomp
+    print 'Book\'s creator first name: '
+    author_first_name = gets.chomp
+    print 'Book\'s creator last name: '
+    author_last_name = gets.chomp
+    print 'Enter the book\'s genre: '
+    genre_name = gets.chomp
+    print 'Enter the book\'s publisher: '
+    publisher_name = gets.chomp
+    print 'Enter the book\'s cover state: '
+    cover_state = gets.chomp
+    print 'Enter the book\'s color: '
+    label_color = gets.chomp
+
+    # item inputs
+    print "\nWhat's the publish date? [year] "
+    print "\nAnswer: "
+    book_date = gets.chomp.to_i
+
+    new_book = Book.new(publisher_name, cover_state, book_date)
+
+    new_author = Author.new(author_first_name, author_last_name)
+    new_author.add_item(new_book)
+
+    new_genre = Genre.new(genre_name)
+    new_genre.add_item(new_book)
+
+    new_label = Label.new(label_title, label_color)
+    new_label.add_item(new_book)
+
+    books << new_book
+    authors << new_author
+    genre << new_genre
+    labels << new_label
+
+    puts 'Book added!'
   end
 
   private
