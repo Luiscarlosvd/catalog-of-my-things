@@ -40,8 +40,10 @@ class App
       MusicAlbum.add_music_album(music_albums, genre, authors)
       write_genres
       write_music_albums
+      write_authors
     when 9
       @games << Game.add_games(games, genre, authors)
+      write_authors
     when 10
       goodbye
       exit

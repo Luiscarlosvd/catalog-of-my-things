@@ -29,4 +29,13 @@ module WriteData
     FileUtils.touch('./storage_data/music_albums.json')
     File.write('./storage_data/music_albums.json', JSON.pretty_generate(json_music_albums))
   end
+
+  def write_authors
+    json_author = []
+    authors.each do |author|
+      json_author << { first_name: author.first_name, last_name: author.last_name, id: author.id }
+    end
+    FileUtils.touch('./storage_data/author.json')
+    File.write('./storage_data/author.json', JSON.pretty_generate(json_author))
+  end
 end
