@@ -55,10 +55,7 @@ class Game < Item
     print 'Enter the game\'s color: '
     label_color = gets.chomp
 
-
     new_game = Game.new(multiplayer_answer, last_played, game_date)
-
-
 
     new_author = authors.find { |find_author| find_author.first_name == author_first_name && find_author.last_name == author_last_name }
     new_genre = genre.find { |find_genre| find_genre.name == genre_name }
