@@ -47,22 +47,22 @@ class App
       Author.list_all_authors(authors)
     when 7
       Book.add_books(books, genre, authors, labels)
-      # write_books
-      # write_genres
-      # write_authors
-      # write_labels
+      write_books
+      write_genres
+      write_authors
+      write_labels
     when 8
       MusicAlbum.add_music_album(music_albums, genre, authors, labels)
       write_genres
       write_music_albums
       write_authors
-      # write_labels
+      write_labels
     when 9
       Game.add_games(games, genre, authors, labels)
       write_games
       write_genres
       write_authors
-      # write_labels
+      write_labels
     when 10
       goodbye
       exit

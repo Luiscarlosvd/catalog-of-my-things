@@ -6,5 +6,21 @@
     "first_name": "Asd",
     "last_name": "Asd",
     "genre": "Zxc"
+  },
+  {
+    "publish_date": "2023/03/03",
+    "id": 218,
+    "on_spotify": false,
+    "first_name": "Luis",
+    "last_name": "Valera",
+    "genre": "Rock"
+  },
+  {
+    "publish_date": "2022/02/02",
+    "id": 558,
+    "on_spotify": false,
+    "first_name": "Redman",
+    "last_name": "Dsd",
+    "genre": "Rock"
   }
 ]
