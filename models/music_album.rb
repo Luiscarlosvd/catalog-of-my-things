@@ -3,7 +3,7 @@ require_relative 'author'
 require_relative 'genre'
 
 class MusicAlbum < Item
-  attr_accessor :on_spotify
+  attr_accessor :on_spotify, :id
 
   def initialize(publish_date, id = SecureRandom.random_number(1000))
     super(publish_date, id)
@@ -44,7 +44,7 @@ class MusicAlbum < Item
 
     if new_author.nil?
       new_author = Author.new(first_name, last_name)
-      authors << author
+      authors << new_author
     end
 
     new_genre.add_item(new_music_album)
