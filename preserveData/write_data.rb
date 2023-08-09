@@ -38,4 +38,24 @@ module WriteData
     FileUtils.touch('./storage_data/author.json')
     File.write('./storage_data/author.json', JSON.pretty_generate(json_author))
   end
+
+  def write_games
+    json_games = []
+    games.each do |game|
+      print game.inspect
+      new_game = {
+        publish_date: game.publish_date,
+        id: game.id,
+        multiplayer: game.multiplayer,
+        last_played_at: game.last_played_at,
+        first_name: game.author.first_name,
+        last_name: game.author.last_name,
+        genre: game.genre.name
+      }
+      json_games << new_game
+    end
+
+    FileUtils.touch('./storage_data/games.json')
+    File.write('./storage_data/games.json', JSON.pretty_generate(json_games))
+  end
 end

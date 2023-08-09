@@ -1,0 +1,20 @@
+[
+  {
+    "publish_date": 0,
+    "id": 189,
+    "multiplayer": false,
+    "last_played_at": 0,
+    "first_name": "asd",
+    "last_name": "asd",
+    "genre": "asd"
+  },
+  {
+    "publish_date": 1990,
+    "id": 391,
+    "multiplayer": true,
+    "last_played_at": 1991,
+    "first_name": "qwe",
+    "last_name": "qwer",
+    "genre": "zxc"
+  }
+]

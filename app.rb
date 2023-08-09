@@ -42,7 +42,9 @@ class App
       write_music_albums
       write_authors
     when 9
-      @games << Game.add_games(games, genre, authors)
+      Game.add_games(games, genre, authors)
+      write_games
+      write_genres
       write_authors
     when 10
       goodbye

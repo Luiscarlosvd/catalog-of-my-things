@@ -83,7 +83,7 @@ class Game < Item
     new_author.add_item(new_game)
 
     games << new_game
-    puts 'Your music album has been created successfully'
+    puts 'Your game has been created successfully'
   end
 
   private
