@@ -15,8 +15,8 @@ class MusicAlbum < Item
       puts 'No Music Albums found'
     else
       puts 'List of All Music Albums: '
-      music_albums.each_with_index do |music_album, index|
-        puts "#{index}) (ID:#{music_album.id}) Author: #{music_album.author.first_name} #{music_album.author.last_name}, Genre: #{music_album.genre.name}, Publish Date: #{music_album.publish_date}"
+      music_albums.each_with_index do |album, index|
+        puts "#{index}) (ID:#{album.id}) Title: #{album.label.title}, Author: #{album.author.first_name} #{album.author.last_name}, Genre: #{album.genre.name}, Publish Date: #{album.publish_date}"
       end
       puts
     end
@@ -24,7 +24,7 @@ class MusicAlbum < Item
 
   def self.add_music_album(music_albums, genre, authors, labels)
     print 'Enter name of the music album: '
-    label_title = gets.chomp
+    label_title = gets.chomp.capitalize
     print 'First Name of the author: '
     first_name = gets.chomp.capitalize
     print 'Last Name of the author: '

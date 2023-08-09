@@ -1,10 +1,12 @@
 [
   {
-    "publish_date": "2020/20/20",
-    "id": 408,
+    "publish_date": "2009/04/04",
+    "id": 721,
+    "title": "The machine",
+    "label_color": "black",
     "on_spotify": false,
-    "first_name": "Asd",
-    "last_name": "Asd",
-    "genre": "Zxc"
+    "first_name": "Sergio",
+    "last_name": "Luis",
+    "genre": "Rock"
   }
 ]
