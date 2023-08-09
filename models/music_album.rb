@@ -22,18 +22,22 @@ class MusicAlbum < Item
     end
   end
 
-  def self.add_music_album(music_albums, genre, authors)
+  def self.add_music_album(music_albums, genre, authors, labels)
+    print 'Enter name of the music album: '
+    label_title = gets.chomp
     print 'First Name of the author: '
     first_name = gets.chomp.capitalize
     print 'Last Name of the author: '
     last_name = gets.chomp.capitalize
     print 'Genre of the music album: '
     name_genre = gets.chomp.capitalize
+    print 'Enter the music album\'s color: '
+    label_color = gets.chomp
     print 'Publish Date [YYYY/MM/DD]: '
     publish_date = gets.chomp
 
     new_author = authors.find { |find_author| find_author.first_name == first_name && find_author.last_name == last_name }
-
+    new_label = labels.find { |find_label| find_label.title == label_title && find_label.color == label_color }
     new_genre = genre.find { |find_genre| find_genre.name == name_genre }
 
     new_music_album = MusicAlbum.new(publish_date)
@@ -48,8 +52,14 @@ class MusicAlbum < Item
       authors << new_author
     end
 
+    if new_label.nil?
+      new_label = Label.new(label_title, label_color)
+      labels << new_label
+    end
+
     new_genre.add_item(new_music_album)
     new_author.add_item(new_music_album)
+    new_label.add_item(new_music_album)
 
     music_albums << new_music_album
     puts 'Your music album has been created successfully'

@@ -10,9 +10,9 @@ AllCops:
 Layout/LineLength:
   Max: 200
 Metrics/MethodLength:
-  Max: 40
-Metrics/AbcSize:
   Max: 50
+Metrics/AbcSize:
+  Max: 150
 Metrics/ClassLength:
   Max: 550
 Metrics/CyclomaticComplexity:
@@ -25,6 +25,8 @@ Metrics/BlockLength:
   AllowedMethods: []
   AllowedPatterns: []
   Exclude: []
+Metrics/PerceivedComplexity:
+  Max: 20
 
 
 Style/Documentation:

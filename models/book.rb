@@ -50,21 +50,32 @@ class Book < Item
 
     new_book = Book.new(publisher_name, cover_state, book_date)
 
-    new_author = Author.new(author_first_name, author_last_name)
-    new_author.add_item(new_book)
+    new_author = authors.find { |find_author| find_author.first_name == author_first_name && find_author.last_name == author_last_name }
+    new_genre = genre.find { |find_genre| find_genre.name == genre_name }
+    new_label = labels.find { |find_label| find_label.title == label_title && find_label.color == label_color }
 
-    new_genre = Genre.new(genre_name)
+    if new_author.nil?
+      new_author = Author.new(author_first_name, author_last_name)
+      authors << new_author
+    end
+
+    if new_genre.nil?
+      new_genre = Genre.new(genre_name)
+      genre << new_genre
+    end
+
+    if new_label.nil?
+      new_label = Label.new(label_title, label_color)
+      labels << new_label
+    end
+
     new_genre.add_item(new_book)
-
-    new_label = Label.new(label_title, label_color)
+    new_author.add_item(new_book)
     new_label.add_item(new_book)
 
     books << new_book
-    authors << new_author
-    genre << new_genre
-    labels << new_label
 
-    puts 'Book added!'
+    puts 'Book added successfully'
   end
 
   private
