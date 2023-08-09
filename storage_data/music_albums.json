@@ -1,26 +1,10 @@
 [
   {
-    "publish_date": "2023/03/03",
-    "id": 552,
+    "publish_date": "2020/20/20",
+    "id": 408,
     "on_spotify": false,
-    "first_name": "Luis",
-    "last_name": "Valera",
-    "genre": "Rock"
-  },
-  {
-    "publish_date": "2022/01/04",
-    "id": 865,
-    "on_spotify": false,
-    "first_name": "Sergio",
-    "last_name": "Peralta",
-    "genre": "Jazz"
-  },
-  {
-    "publish_date": "2019/07/07",
-    "id": 686,
-    "on_spotify": false,
-    "first_name": "Adeyemi",
-    "last_name": "Olusola",
-    "genre": "Rock"
+    "first_name": "Asd",
+    "last_name": "Asd",
+    "genre": "Zxc"
   }
 ]

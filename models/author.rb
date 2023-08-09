@@ -24,9 +24,9 @@ class Author
       authors.each do |author|
         filtered_authors << author unless filtered_authors.any? { |a| a.first_name == author.first_name && a.last_name == author.last_name }
       end
-
+      puts 'List of all authors: '
       filtered_authors.each_with_index do |author, index|
-        puts "[#{index + 1}] (ID: #{author.id}) Author: #{author.first_name} #{author.last_name}"
+        puts "#{index}) (ID: #{author.id}) Author: #{author.first_name} #{author.last_name}"
       end
       puts
     end

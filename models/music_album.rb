@@ -14,8 +14,9 @@ class MusicAlbum < Item
     if music_albums.empty?
       puts 'No Music Albums found'
     else
+      puts 'List of All Music Albums: '
       music_albums.each_with_index do |music_album, index|
-        puts "#{index}) Author: #{music_album.author.first_name} #{music_album.author.last_name}, Genre: #{music_album.genre.name}, Publish Date: #{music_album.publish_date}"
+        puts "#{index}) (ID:#{music_album.id}) Author: #{music_album.author.first_name} #{music_album.author.last_name}, Genre: #{music_album.genre.name}, Publish Date: #{music_album.publish_date}"
       end
       puts
     end

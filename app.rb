@@ -13,8 +13,8 @@ class App
 
   def initialize
     @genre = load_genres
-    @music_albums = load_music_albums
     @authors = load_authors
+    @music_albums = load_music_albums
     @games = load_games
   end
 

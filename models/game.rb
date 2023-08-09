@@ -16,9 +16,10 @@ class Game < Item
     if games.empty?
       puts 'No Games found'
     else
+      puts 'List of all games: '
       games.each do |game|
         if game.instance_of? Game
-          puts "\n[#{index}] (ID:#{game.id}) The game: game.label by #{game.author.first_name} #{game.author.last_name} has been published in #{game.publish_date}"
+          puts "#{index}) (ID:#{game.id}) The game: game.label , Author: #{game.author.first_name} #{game.author.last_name}, Genre: #{game.genre.name}, Publish Date: #{game.publish_date}"
           index += 1
         end
       end

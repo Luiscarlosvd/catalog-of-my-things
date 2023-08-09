@@ -42,7 +42,6 @@ module WriteData
   def write_games
     json_games = []
     games.each do |game|
-      print game.inspect
       new_game = {
         publish_date: game.publish_date,
         id: game.id,
