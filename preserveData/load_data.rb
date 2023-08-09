@@ -55,4 +55,24 @@ module LoadData
     end
     authors_arr
   end
+
+  def load_games
+    games_arr = []
+    if File.exist?('./storage_data/games.json')
+      games_data = File.read('./storage_data/games.json')
+      if games_data != ''
+        JSON.parse(games_data).map do |game|
+          new_game = Game.new(game['multiplayer'], game['last_played_at'], game['id'], game['publish_date'])
+          new_author = Author.new(game['first_name'], game['last_name'])
+          new_genre = genre.find { |find_genre| find_genre.name == game['genre'] }
+
+          new_genre.add_item(new_game)
+          new_author.add_item(new_game)
+
+          games_arr << new_game
+        end
+      end
+    end
+    games_arr
+  end
 end

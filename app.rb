@@ -15,7 +15,7 @@ class App
     @genre = load_genres
     @music_albums = load_music_albums
     @authors = load_authors
-    @games = []
+    @games = load_games
   end
 
   def run
