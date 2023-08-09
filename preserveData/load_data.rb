@@ -28,8 +28,7 @@ module LoadData
           new_music_album = MusicAlbum.new(music_album['publish_date'])
           new_music_album.id = music_album['id']
           new_music_album.on_spotify = music_album['on_spotify']
-          ## new_author = authors.find { |find_author| find_author.first_name == music_album['first_name'] && find_author.last_name == music_album['last_name'] }
-          new_author = Author.new(music_album['first_name'], music_album['last_name'])
+          new_author = authors.find { |find_author| find_author.first_name == music_album['first_name'] && find_author.last_name == music_album['last_name'] }
           new_genre = genre.find { |find_genre| find_genre.name == music_album['genre'] }
 
           new_genre.add_item(new_music_album)
@@ -40,5 +39,37 @@ module LoadData
       end
     end
     music_album_arr
+  end
+
+  def load_authors
+    authors_arr = []
+    if File.exist?('./storage_data/author.json')
+      authors_data = File.read('./storage_data/author.json')
+      if authors_data != ''
+        JSON.parse(authors_data).map do |author|
+          new_author = Author.new(author['first_name'], author['last_name'], author['id'])
+          authors_arr << new_author
+        end
+      end
+    end
+    authors_arr
+  end
+
+  def load_games
+    games_arr = []
+    if File.exist?('./storage_data/games.json')
+      games_data = File.read('./storage_data/games.json')
+      if games_data != ''
+        JSON.parse(games_data).map do |game|
+          new_game = Game.new(game['multiplayer'], game['last_played_at'], game['id'], game['publish_date'])
+          new_author = authors.find { |find_author| find_author.first_name == game['first_name'] && find_author.last_name == game['last_name'] }
+          new_genre = genre.find { |find_genre| find_genre.name == game['genre'] }
+          new_genre.add_item(new_game)
+          new_author.add_item(new_game)
+          games_arr << new_game
+        end
+      end
+    end
+    games_arr
   end
 end

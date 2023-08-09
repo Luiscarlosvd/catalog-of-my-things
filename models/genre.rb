@@ -24,9 +24,9 @@ class Genre
       genres.each do |genre|
         filtered_genres << genre unless filtered_genres.any? { |g| g.name == genre.name }
       end
-
+      puts 'List of all genres: '
       filtered_genres.each_with_index do |genre, index|
-        puts "#{index}) Genre: #{genre.name}"
+        puts "#{index}) (ID: #{genre.id}) Genre: #{genre.name}"
       end
       puts
     end
